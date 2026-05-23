@@ -4,7 +4,8 @@ This repository contains a reusable agent Skill for creating VS Code extensions 
 
 ## What's Included
 
-- Skill: `.trae/skills/vscode-extension-builder/SKILL.md`
+- Skill (Trae format): `.trae/skills/vscode-extension-builder/SKILL.md`
+- Skill (Codex / open skill format location): `.agents/skills/vscode-extension-builder/SKILL.md`
 
 ## How to Use (Different Agents)
 
@@ -14,13 +15,29 @@ This repository contains a reusable agent Skill for creating VS Code extensions 
 2. The Skill will be discovered at:
    - `.trae/skills/vscode-extension-builder/SKILL.md`
 
-### Codex / Cursor / Other agents (no native Skill loader)
+### Codex (recommended install)
 
-1. Open `.trae/skills/vscode-extension-builder/SKILL.md`
-2. Copy the full content into your agent’s reusable prompt / custom instructions
-3. Use it whenever you need to create/modify/package/publish a VS Code extension
+Codex discovers skills from repository-scoped `.agents/skills/` and user-scoped `$HOME/.agents/skills/`.
+
+Option A — Repo-scoped (recommended for sharing within a repo):
+1. Copy this folder into your target project repository:
+   - `.agents/skills/vscode-extension-builder/`
+2. Keep `SKILL.md` at:
+   - `.agents/skills/vscode-extension-builder/SKILL.md`
+
+Option B — User-scoped (recommended for reuse across all repos on your machine):
+- macOS / Linux:
+  - `~/.agents/skills/vscode-extension-builder/SKILL.md`
+- Windows:
+  - `%USERPROFILE%\.agents\skills\vscode-extension-builder\SKILL.md`
+
+After installing, restart Codex and run `/skills` (or `$` skill mention) to confirm it is detected.
+
+### Cursor / Other agents (no native skill discovery)
+
+1. Open `SKILL.md` and copy the full content into your agent’s reusable prompt / custom instructions
+2. Use it whenever you need to create/modify/package/publish a VS Code extension
 
 ## License
 
 MIT
-
